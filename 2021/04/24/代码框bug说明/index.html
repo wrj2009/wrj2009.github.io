@@ -171,7 +171,7 @@
         
 
         <div class="article-content markdown-body">
-            <p>主题：Keep<br>Keep 主题会根据系统的模式调整页面的颜色（深色或浅色）。其中代码框默认为浅色，所以如果当前系统为深色模式，那么博客的页面都会切换成深色模式，但代码框的背景却仍然是浅色模式下的颜色。<br>解决方法：将系统切换成浅色模式，然后点击页面右下角的齿轮，再点击展开的菜单中太阳或月亮图标以切换深色/浅色模式。</p>
+            <p>主题：Keep<br>Keep 主题会根据系统的模式调整页面的颜色（深色或浅色）。其中代码框默认为浅色，所以如果当前系统为深色模式，那么博客的页面都会切换成深色模式，但代码框的背景却仍然是浅色模式下的颜色。<br>解决方法：将系统切换成浅色模式，然后点击页面右下角的齿轮，再点击展开的菜单中太阳或月亮图标以切换深色/浅色模式<br>。<br>$\frac{1}{2} = 0.5$</p>
 
         </div>
 
@@ -450,5 +450,20 @@
 
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>
