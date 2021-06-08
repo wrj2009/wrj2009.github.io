@@ -9,7 +9,7 @@
     
     <title>
         
-            代码框 bug 说明 |
+            GitHub Pages 使用方法 |
         
         wrj2009
     </title>
@@ -134,7 +134,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">代码框 bug 说明</span>
+            <span class="title-hover-animation">GitHub Pages 使用方法</span>
         </div>
 
         
@@ -150,9 +150,20 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i> 2021-04-24 16:11:01
+        <i class="fas fa-edit"></i> 2021-06-08 20:14:38
     </span>
     
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
+                    </li>
+                
+            </ul>
+        </span>
     
 
     
@@ -171,21 +182,40 @@
         
 
         <div class="article-content markdown-body">
-            <p>主题：Keep<br>Keep 主题会根据系统的模式调整页面的颜色（深色或浅色）。其中代码框默认为浅色，所以如果当前系统为深色模式，那么博客的页面都会切换成深色模式，但代码框的背景却仍然是浅色模式下的颜色。<br>解决方法：将系统切换成浅色模式，然后点击页面右下角的齿轮，再点击展开的菜单中太阳或月亮图标以切换深色/浅色模式。</p>
+            <p>GitHub 上有很多人使用 GitHub Pages 服务搭建了自己的网站。比如你现在打开的就是使用 GitHub Pages 服务搭建的。（doge）<br>那么，GitHub Pages 该如何使用呢？  </p>
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>这篇教程只是根据个人经验并参考了一些其他文章写成的，难免会存在一些错误，如果发现错误欢迎在评论区指正。  </p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><p>GitHub Pages 是存储在 GitHub 仓库里的。因此首先要创建一个仓库。<br>点击 GitHub 右上角的“+”，选择“New Repository”，进入创建仓库页面。<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://z3.ax1x.com/2021/06/08/2sVCuT.png"
+                      alt="新建菜单"
+                ><br>然后为仓库命名。要使用 GitHub Pages，必须将仓库命名为“<em>username</em>.github.io”（username 表示你的 GitHub 用户名）。例如，我的用户名是 wrj2009，我就需要创建一个名为“wrj2009.github.io”的仓库。<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://z3.ax1x.com/2021/06/08/2sVNxP.png"
+                      alt="仓库名"
+                >  </p>
+<h2 id="在主分支上添加文件"><a href="#在主分支上添加文件" class="headerlink" title="在主分支上添加文件"></a>在主分支上添加文件</h2><p>创建完成后，就可以添加文件了。可以在主分支上添加一个 index.html 文件，这样访问创建的网站时就不会显示 404 了。HTML 的使用方法这里就不展开讲了。<br>这一步只是为了方便确认 GitHub Pages 有没有创建成功。  </p>
+<h2 id="设置-GitHub-Pages"><a href="#设置-GitHub-Pages" class="headerlink" title="设置 GitHub Pages"></a>设置 GitHub Pages</h2><p>创建了 index.html 后，转到 Settings 标签，在设置页面的左边会有一个 Pages 选项。点击它进入 Github Pages 的设置页面。然后，在“Source”下面，把“Branch”设为刚才你添加 index.html 的分支，并把右边的文件夹图标的下拉框设为“/(root)”。</p>
+<h2 id="确认是否创建成功"><a href="#确认是否创建成功" class="headerlink" title="确认是否创建成功"></a>确认是否创建成功</h2><p>以上步骤全部完成后，就可以在浏览器里打开你的网站了！网站的地址与仓库名是一样的，也就是“<em>username</em>.github.io”。如果打不开，可能需要刷新或者清理缓存（这个方法只是个人经验）。<br>确认能够打开后，就可以在你的仓库中添加更多的页面了！  </p>
+<h2 id="一些提示"><a href="#一些提示" class="headerlink" title="一些提示"></a>一些提示</h2><ol>
+<li>最好在每个文件夹下都创建一个 index.html，这样可以避免在访问“<a class="link"   href="https://xxx.github.io/xxx/”而不是“https://xxx.github.io/xxx/xxxxx.html”时出现" >https://xxx.github.io/xxx/”而不是“https://xxx.github.io/xxx/xxxxx.html”时出现<i class="fas fa-external-link-alt"></i></a> 404。  </li>
+<li>添加一个 404.html 就可以自定义 404 页面了！  </li>
+</ol>
 <hr>
-<p>测试<br>$\frac{1}{2} = 0.5$  </p>
-<script type="math/tex; mode=display">\frac{\pi^{2}}{6}=\frac{1}{1^{2}}+\frac{1}{2^{2}}+\frac{1}{3^{2}}+\cdots</script><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line">r = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    r += <span class="number">1</span> / (i ** <span class="number">2</span>)</span><br><span class="line">    pi = math.sqrt(r * <span class="number">6</span>)</span><br><span class="line">    print(pi, flush=<span class="literal">True</span>, end=<span class="string">&#x27;\r&#x27;</span>)</span><br><span class="line">    i += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>以后会写 Hexo 的使用教程，敬请期待（鬼知道我写得好不好）（doge）</p>
+
         </div>
 
         
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：代码框 bug 说明</li>
+        <li>本文标题：GitHub Pages 使用方法</li>
         <li>本文作者：wrj2009</li>
-        <li>创建时间：2021-04-24 16:11:01</li>
+        <li>创建时间：2021-06-08 20:14:38</li>
         <li>
-            本文链接：https://wrj2009.github.io/2021/04/24/代码框bug说明/
+            本文链接：https://wrj2009.github.io/2021/06/08/GitHubPages使用方法/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -199,29 +229,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/06/08/GitHubPages%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">GitHub Pages 使用方法</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/01/17/hello-world/"
+                           href="/2021/04/24/%E4%BB%A3%E7%A0%81%E6%A1%86bug%E8%AF%B4%E6%98%8E/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Hello World</span>
+                                <span class="post-nav-title-item">代码框 bug 说明</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -399,7 +414,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F"><span class="nav-number">1.</span> <span class="nav-text">注意</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E6%96%87"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="nav-number">2.1.</span> <span class="nav-text">创建仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E4%B8%BB%E5%88%86%E6%94%AF%E4%B8%8A%E6%B7%BB%E5%8A%A0%E6%96%87%E4%BB%B6"><span class="nav-number">2.2.</span> <span class="nav-text">在主分支上添加文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE-GitHub-Pages"><span class="nav-number">2.3.</span> <span class="nav-text">设置 GitHub Pages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AE%E8%AE%A4%E6%98%AF%E5%90%A6%E5%88%9B%E5%BB%BA%E6%88%90%E5%8A%9F"><span class="nav-number">2.4.</span> <span class="nav-text">确认是否创建成功</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%8F%90%E7%A4%BA"><span class="nav-number">2.5.</span> <span class="nav-text">一些提示</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
