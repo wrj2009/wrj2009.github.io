@@ -9,7 +9,7 @@
     
     <title>
         
-            GitHub Pages 使用方法 |
+            Hexo 使用方法 |
         
         wrj2009
     </title>
@@ -134,7 +134,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">GitHub Pages 使用方法</span>
+            <span class="title-hover-animation">Hexo 使用方法</span>
         </div>
 
         
@@ -150,7 +150,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i> 2021-06-08 20:14:38
+        <i class="fas fa-edit"></i> 2021-06-09 20:13:35
     </span>
     
     
@@ -182,28 +182,28 @@
         
 
         <div class="article-content markdown-body">
-            <p>GitHub 上有很多人使用 GitHub Pages 服务搭建了自己的网站。比如你现在打开的就是使用 GitHub Pages 服务搭建的。（doge）<br>那么，GitHub Pages 该如何使用呢？  </p>
-<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>这篇教程只是根据个人经验并参考了一些其他文章写成的，难免会存在一些错误，如果发现错误欢迎在评论区指正。  </p>
-<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><p>GitHub Pages 是存储在 GitHub 仓库里的。因此首先要创建一个仓库。<br>点击 GitHub 右上角的“+”，选择“New Repository”，进入创建仓库页面。<br><img  
+            <p>很多人都有自己的博客，在很多编程有关的网站上都有博客这项功能。这篇教程将介绍使用 GitHub Pages 服务搭建自己的博客的方法。</p>
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>这篇教程只是根据个人经验并参考了一些其他文章写成的，难免会存在一些错误，如果发现错误欢迎在评论区指正。<br>另外，这篇教程是根据在 Windows 下使用 Hexo 的方法写的，在其他系统中可能不适用。  </p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="创建-GitHub-Pages"><a href="#创建-GitHub-Pages" class="headerlink" title="创建 GitHub Pages"></a>创建 GitHub Pages</h2><p>见 <a href="/2021/06/08/GitHubPages使用方法/">GitHub Pages 使用方法</a>。  </p>
+<h2 id="安装和配置必要的程序"><a href="#安装和配置必要的程序" class="headerlink" title="安装和配置必要的程序"></a>安装和配置必要的程序</h2><p><a class="link"   href="http://git-scm.com" >Git<i class="fas fa-external-link-alt"></i></a> 或 <a class="link"   href="https://gitforwindows.org/" >Git (Git for Windows)<i class="fas fa-external-link-alt"></i></a><br><a class="link"   href="https://nodejs.org/zh-cn/download/" >Node.js<i class="fas fa-external-link-alt"></i></a><br>部分系统中可以直接使用命令来安装。  </p>
+<h3 id="配置-Git"><a href="#配置-Git" class="headerlink" title="配置 Git"></a>配置 Git</h3><p>安装 Git 后，可以找到一个叫作 Git Bash 的程序。打开它，然后输入以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;username&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;email&quot;</span></span><br></pre></td></tr></table></figure><br>把 <code>username</code> 替换成你在 GitHub 的用户名，把 <code>email</code> 替换成你在 GitHub 的电子邮箱地址。<br>接下来创建 SSH，在 Git Bash 中输入以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;email&quot;</span></span><br></pre></td></tr></table></figure><br>把 <code>email</code> 替换成你在 GitHub 的电子邮箱地址。  </p>
+<blockquote>
+<p><strong>注意</strong><br>这一步必须在 Git Bash 中执行。  </p>
+</blockquote>
+<p>完成这一步后，能够在 Git Bash 的输出中找到 SSH 的路径。打开其中的“id_rsa.pub”文件（Windows 可以用记事本），复制其中的内容。然后，打开 <a class="link"   href="https://github.com/settings/ssh/new" >GitHub 设置中的新建 SSH 密钥页面<i class="fas fa-external-link-alt"></i></a>，把刚才复制的内容粘贴到“Key”一栏中。（标题似乎可以随便填）  </p>
+<h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><p>首先在 Git Bash 或命令提示符中打开一个用于存放博客数据的目录，然后输入以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">hexo init blog</span><br></pre></td></tr></table></figure><br>你可以把 <code>blog</code> 替换为你想要的名字。然后，在 Git Bash 或命令提示符中进入与这个名字同名的目录，再输入以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></p>
+<h2 id="配置博客"><a href="#配置博客" class="headerlink" title="配置博客"></a>配置博客</h2><p>现在，可以在生成的文件夹中找到一个名为“_config.yml”的文件。打开它，翻到最下面，填上相应内容。<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/username/username.github.io</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure><br>把 <code>repo</code> 对应的内容中的所有 <code>username</code> 替换为你在 GitHub 上的用户名。把 <code>branch</code> 对应的内容改为你的 GitHub Pages 分支。<br>更改后，保存这个文件，然后在 Git Bash 或命令提示符中输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><br>这样，在部署的时候就不会发生错误了。<br>在 _config.yml 中还有非常多的配置，可以根据 <a class="link"   href="https://hexo.io/zh-cn/docs/configuration" >Hexo 文档<i class="fas fa-external-link-alt"></i></a> 中的说明进行调整。  </p>
+<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p>在 Hexo 中有非常多的主题可以选，默认的 Landscape 只是其中之一。你可以在<a class="link"   href="https://hexo.io/themes/" >Hexo 主题<i class="fas fa-external-link-alt"></i></a> 中挑选。有良心的主题作者一定都会写主题的文档的（doge），所以这儿就不详细写怎么配置主题了。不过有一点要提醒一下，选择主题时，图片的链接和蓝色字的链接大部分都是不同的。<br><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://z3.ax1x.com/2021/06/08/2sVCuT.png"
-                      alt="新建菜单"
-                ><br>然后为仓库命名。要使用 GitHub Pages，必须将仓库命名为“<em>username</em>.github.io”（username 表示你的 GitHub 用户名）。例如，我的用户名是 wrj2009，我就需要创建一个名为“wrj2009.github.io”的仓库。<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://z3.ax1x.com/2021/06/08/2sVNxP.png"
-                      alt="仓库名"
-                >  </p>
-<h2 id="在主分支上添加文件"><a href="#在主分支上添加文件" class="headerlink" title="在主分支上添加文件"></a>在主分支上添加文件</h2><p>创建完成后，就可以添加文件了。可以在主分支上添加一个 index.html 文件，这样访问创建的网站时就不会显示 404 了。HTML 的使用方法这里就不展开讲了。<br>这一步只是为了方便确认 GitHub Pages 有没有创建成功。  </p>
-<h2 id="设置-GitHub-Pages"><a href="#设置-GitHub-Pages" class="headerlink" title="设置 GitHub Pages"></a>设置 GitHub Pages</h2><p>创建了 index.html 后，转到 Settings 标签，在设置页面的左边会有一个 Pages 选项。点击它进入 Github Pages 的设置页面。然后，在“Source”下面，把“Branch”设为刚才你添加 index.html 的分支，并把右边的文件夹图标的下拉框设为“/(root)”。</p>
-<h2 id="确认是否创建成功"><a href="#确认是否创建成功" class="headerlink" title="确认是否创建成功"></a>确认是否创建成功</h2><p>以上步骤全部完成后，就可以在浏览器里打开你的网站了！网站的地址与仓库名是一样的，也就是“<em>username</em>.github.io”。如果打不开，可能需要刷新或者清理缓存（这个方法只是个人经验）。<br>确认能够打开后，就可以在你的仓库中添加更多的页面了！  </p>
-<h2 id="一些提示"><a href="#一些提示" class="headerlink" title="一些提示"></a>一些提示</h2><ol>
-<li>最好在每个文件夹下都创建一个 index.html，这样可以避免在访问“<a class="link"   href="https://xxx.github.io/xxx/”而不是“https://xxx.github.io/xxx/xxxxx.html”时出现" >https://xxx.github.io/xxx/”而不是“https://xxx.github.io/xxx/xxxxx.html”时出现<i class="fas fa-external-link-alt"></i></a> 404。  </li>
-<li>添加一个 404.html 就可以自定义 404 页面了！  </li>
-</ol>
+                     data-src="https://z3.ax1x.com/2021/06/09/2ccVXQ.png"
+                      alt="主题"
+                ></p>
+<h2 id="创建文章"><a href="#创建文章" class="headerlink" title="创建文章"></a>创建文章</h2><p>Hexo 的所有文章都存储在 source 文件夹中的 _post 中。为了方便创建，在 Git Bash 或命令提示符中打开博客的根目录，然后输入以下命令即可创建文章：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;title&quot;</span></span><br></pre></td></tr></table></figure><br>把 <code>title</code> 替换为文章的标题。接下来，在 source/_post 下，就可以找到刚才创建的文章。打开它，然后使用 Markdown 或 HTML 写文章就可以了。  </p>
+<h2 id="生成页面并部署-GitHub-Pages"><a href="#生成页面并部署-GitHub-Pages" class="headerlink" title="生成页面并部署 GitHub Pages"></a>生成页面并部署 GitHub Pages</h2><p>每次更新或添加文章后，可以依次执行下面 3 个命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure><br>当然如果你比较懒，可以输入以下 3 个：  </p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo cl</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></h2><p>Hexo 使用教程就写到这儿，实际上 Hexo 还可以添加很多功能，这种功能在很多主题的文档中都有所提及，所以（因为我懒）就不继续写 Hexo 的更多玩法了。  </p>
 <hr>
-<p>以后会写 Hexo 的使用教程，敬请期待（鬼知道我写得好不好）（doge）</p>
+<p>更多功能之一——LaTeX（其实是用 MathJax 的）！<br>$\frac{1}{2} + \frac{1}{2} = 1$</p>
 
         </div>
 
@@ -211,11 +211,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：GitHub Pages 使用方法</li>
+        <li>本文标题：Hexo 使用方法</li>
         <li>本文作者：wrj2009</li>
-        <li>创建时间：2021-06-08 20:14:38</li>
+        <li>创建时间：2021-06-09 20:13:35</li>
         <li>
-            本文链接：https://wrj2009.github.io/2021/06/08/GitHubPages使用方法/
+            本文链接：https://wrj2009.github.io/2021/06/09/Hexo使用方法/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -229,29 +229,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/06/09/Hexo%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">Hexo 使用方法</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/04/24/%E4%BB%A3%E7%A0%81%E6%A1%86bug%E8%AF%B4%E6%98%8E/"
+                           href="/2021/06/08/GitHubPages%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">代码框 bug 说明</span>
+                                <span class="post-nav-title-item">GitHub Pages 使用方法</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -429,7 +414,13 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F"><span class="nav-number">1.</span> <span class="nav-text">注意</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E6%96%87"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="nav-number">2.1.</span> <span class="nav-text">创建仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E4%B8%BB%E5%88%86%E6%94%AF%E4%B8%8A%E6%B7%BB%E5%8A%A0%E6%96%87%E4%BB%B6"><span class="nav-number">2.2.</span> <span class="nav-text">在主分支上添加文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE-GitHub-Pages"><span class="nav-number">2.3.</span> <span class="nav-text">设置 GitHub Pages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AE%E8%AE%A4%E6%98%AF%E5%90%A6%E5%88%9B%E5%BB%BA%E6%88%90%E5%8A%9F"><span class="nav-number">2.4.</span> <span class="nav-text">确认是否创建成功</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%8F%90%E7%A4%BA"><span class="nav-number">2.5.</span> <span class="nav-text">一些提示</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F"><span class="nav-number">1.</span> <span class="nav-text">注意</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E6%96%87"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA-GitHub-Pages"><span class="nav-number">2.1.</span> <span class="nav-text">创建 GitHub Pages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE%E5%BF%85%E8%A6%81%E7%9A%84%E7%A8%8B%E5%BA%8F"><span class="nav-number">2.2.</span> <span class="nav-text">安装和配置必要的程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-Git"><span class="nav-number">2.2.1.</span> <span class="nav-text">配置 Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Hexo"><span class="nav-number">2.2.2.</span> <span class="nav-text">安装 Hexo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%8D%9A%E5%AE%A2"><span class="nav-number">2.3.</span> <span class="nav-text">配置博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="nav-number">2.4.</span> <span class="nav-text">更换主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0"><span class="nav-number">2.5.</span> <span class="nav-text">创建文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E9%A1%B5%E9%9D%A2%E5%B9%B6%E9%83%A8%E7%BD%B2-GitHub-Pages"><span class="nav-number">2.6.</span> <span class="nav-text">生成页面并部署 GitHub Pages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.7.</span> <span class="nav-text">1
+2
+3
+hexo cl
+hexo g
+hexo d
+</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
