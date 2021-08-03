@@ -9,7 +9,7 @@
     
     <title>
         
-            代码框 bug 说明 |
+            学习在 Python 中使用 Qt |
         
         wrj2009
     </title>
@@ -134,7 +134,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">代码框 bug 说明</span>
+            <span class="title-hover-animation">学习在 Python 中使用 Qt</span>
         </div>
 
         
@@ -150,9 +150,20 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i> 2021-04-24 16:11:01
+        <i class="fas fa-edit"></i> 2021-07-28 15:16:23
     </span>
     
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B%E5%8F%8A%E7%BB%8F%E9%AA%8C/">学习过程及经验</a>
+                    </li>
+                
+            </ul>
+        </span>
     
 
     
@@ -171,21 +182,35 @@
         
 
         <div class="article-content markdown-body">
-            <p>主题：Keep<br>Keep 主题会根据系统的模式调整页面的颜色（深色或浅色）。其中代码框默认为浅色，所以如果当前系统为深色模式，那么博客的页面都会切换成深色模式，但代码框的背景却仍然是浅色模式下的颜色。<br>解决方法：将系统切换成浅色模式，然后点击页面右下角的齿轮，再点击展开的菜单中太阳或月亮图标以切换深色/浅色模式。</p>
+            <p>好久没更新文章了，最近在尝试在 Python 中使用 Qt，我就分享一下一些经验吧。<br>文章可能存在错误，欢迎指正。  </p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>使用 pip 安装下面这些库：  </p>
+<ul>
+<li>PySide6</li>
+<li>PyQt6-tools</li>
+</ul>
+<p>（上面没有列出各种依赖库。安装 PyQt6-tools 时，会自动安装 PyQt6。）<br>安装这些库使用的命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install pyside6</span><br><span class="line">pip install pyqt6-tools</span><br></pre></td></tr></table></figure><br>（可能需要使用“pip3”等命令。）</p>
+<h1 id="使用-Qt-Designer-设计界面"><a href="#使用-Qt-Designer-设计界面" class="headerlink" title="使用 Qt Designer 设计界面"></a>使用 Qt Designer 设计界面</h1><p>在安装上面的库之后，在文件资源管理器中打开 Python 的安装目录。在我的电脑上，安装目录是 <code>C:\Users\username\AppData\Local\Programs\Python\Python39</code>。接着，打开这个目录下的 <code>Lib\site-packages\PySide6</code>。这个目录下有一个 <code>designer.exe</code>。打开它即可进入 Qt Designer。<br>打开后默认会弹出一个窗口。在左侧的“templates\forms”中选择 Widget，然后点击下方的“创建”按钮，就可以创建一个 UI 文件了。<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://z3.ax1x.com/2021/07/28/WTuNWT.png"
+                      alt=""
+                ><br>创建之后，从左边随意拖动几个组件到中间的“Form - untitled”窗口中。组件的各种属性（样式）可以到右边的“属性编辑器”中编辑。<br>（几个常用的组件：普通按钮“Push Button”、单选框“Radio Button”、复选框“Check Box”、单行输入框“Line Edit”、显示文字的标签“Label”、进度条“Progress Bar”等。）<br>完成后，可以通过顶部菜单的“窗体▶预览于▶…”或者“窗体▶预览”来预览设计的用户界面。满意后，点击顶部菜单“文件▶另存为…”来保存 UI 文件。</p>
+<h1 id="将-UI-文件转换为-Python-代码"><a href="#将-UI-文件转换为-Python-代码" class="headerlink" title="将 UI 文件转换为 Python 代码"></a>将 UI 文件转换为 Python 代码</h1><p>在安装 PySide 库时，会自动安装用于转换 UI 文件的工具“pyuic6”。<br>Windows 系统下，运行以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> 保存UI文件的目录</span><br><span class="line">pyuic6 -o <span class="string">&quot;生成的Python程序文件名&quot;</span> <span class="string">&quot;UI文件名&quot;</span></span><br></pre></td></tr></table></figure><br>例如，我保存了一个文件名是 login.ui 的文件，并生成一个 login_ui.py：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> Python</span><br><span class="line">pyuic6 -o <span class="string">&quot;login_ui.py&quot;</span> <span class="string">&quot;login.ui&quot;</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="使用生成的-Python-代码"><a href="#使用生成的-Python-代码" class="headerlink" title="使用生成的 Python 代码"></a>使用生成的 Python 代码</h1><p>在同目录下创建一个 Python 文件，输入以下代码：</p>
 <hr>
-<p>测试<br>$\frac{1}{2} = 0.5$  </p>
-<script type="math/tex; mode=display">\frac{\pi^{2}}{6}=\frac{1}{1^{2}}+\frac{1}{2^{2}}+\frac{1}{3^{2}}+\cdots</script><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line">r = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    r += <span class="number">1</span> / (i ** <span class="number">2</span>)</span><br><span class="line">    pi = math.sqrt(r * <span class="number">6</span>)</span><br><span class="line">    print(pi, flush=<span class="literal">True</span>, end=<span class="string">&#x27;\r&#x27;</span>)</span><br><span class="line">    i += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>未完待续</p>
+
         </div>
 
         
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：代码框 bug 说明</li>
+        <li>本文标题：学习在 Python 中使用 Qt</li>
         <li>本文作者：wrj2009</li>
-        <li>创建时间：2021-04-24 16:11:01</li>
+        <li>创建时间：2021-07-28 15:16:23</li>
         <li>
-            本文链接：https://wrj2009.github.io/2021/04/24/代码框bug说明/
+            本文链接：https://wrj2009.github.io/2021/07/28/学习在Python中使用Qt/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -199,29 +224,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/06/08/GitHubPages%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">GitHub Pages 使用方法</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/01/17/hello-world/"
+                           href="/2021/06/09/Hexo%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Hello World</span>
+                                <span class="post-nav-title-item">Hexo 使用方法</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -399,7 +409,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Qt-Designer-%E8%AE%BE%E8%AE%A1%E7%95%8C%E9%9D%A2"><span class="nav-number">2.</span> <span class="nav-text">使用 Qt Designer 设计界面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%86-UI-%E6%96%87%E4%BB%B6%E8%BD%AC%E6%8D%A2%E4%B8%BA-Python-%E4%BB%A3%E7%A0%81"><span class="nav-number">3.</span> <span class="nav-text">将 UI 文件转换为 Python 代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%94%9F%E6%88%90%E7%9A%84-Python-%E4%BB%A3%E7%A0%81"><span class="nav-number">4.</span> <span class="nav-text">使用生成的 Python 代码</span></a></li></ol>
     </div>
 </div>
         </aside>
