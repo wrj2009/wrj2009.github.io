@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>404 Not Found</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div id="content">
+            <h2>404</h2>
+            <img src="./images/thinking-face.png" style="width: 50px;" />
+            <audio src="./audios/rickroll.mp3" controls autoplay><i>Never gonna give you up, never gonna let you down.</i></audio>
+            <p>您好，您访问的资源不存在，请在<span id="second"></span>秒后再访问。</p>
+        </div>
+        <script>
+            // Give you up
+            var time = 1 / 0;
+            // Let you down
+            document.getElementById("second").innerHTML = time;
+            // Run around
+            if (1 + 1 != 2) {
+                for (;;) {
+                    alert("Never gonna give you up");
+                }
+            }
+            // Dessert you
+            if (1 + 1 == 3) {
+                window.close();
+            }
+        </script>
+    </body>
+</html>
