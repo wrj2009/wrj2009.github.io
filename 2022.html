@@ -17,7 +17,7 @@
   <body>
     <span id="time"></span>
     <script>
-      let fd = new Date(2022, 5, 30, 21, 53)
+      let fd = new Date(2022, 6, 1, 16, 30)
       setInterval(() => {
         let dd = new Date(fd.getTime() - new Date().getTime())
         let timeOut = dd < 0
@@ -30,9 +30,9 @@
         let seconds = Math.floor(dd / 1000 % 60)
         let milliseconds = Math.floor(dd % 1000)
         if (timeOut) {
-          document.getElementById("time").innerHTML = "距离我们告别已经过去了 " + days + " 天 " + hours + " 时 " + minutes + " 分 " + seconds + " 秒 " + milliseconds + " 毫秒"
+          document.getElementById("time").innerHTML = "距离我们告别，已经过去了 " + days + " 天 " + hours + " 时 " + minutes + " 分 " + seconds + " 秒 " + milliseconds + " 毫秒"
         } else {
-          document.getElementById("time").innerHTML = days + " 天 " + hours + " 时 " + minutes + " 分 " + seconds + " 秒 " + milliseconds + " 毫秒"
+          document.getElementById("time").innerHTML = "距离我们告别，还有 " + days + " 天 " + hours + " 时 " + minutes + " 分 " + seconds + " 秒 " + milliseconds + " 毫秒"
         }
       }, 1)
     </script>
