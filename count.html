@@ -1,1 +1,68 @@
-
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计数</title>
+    <style>
+        p#count {
+            font-size: 96px;
+            color: white;
+            font-weight: bold;
+            /* 猜字体 */
+            font-family: "San Francisco", "PingFang-SC", "PingFang SC", Consolas, "SFMono-Regular", "SF Mono", Menlo, Courier, "Courier New";
+        }
+        div#main {
+            background-color: black;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button {
+            background-color: #2196F3;
+            color: white;
+            width: 120px;
+            height: 40px;
+            border: none;
+            border-radius: 4px;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+        button:active {
+            opacity: 0.3;
+        }
+        button.white-btn {
+            background-color: white;
+            color: black;
+            border: 1px solid #bbbbbb;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <p id="count">0</p>
+    </div>
+    <br />
+    <button id="increase">+1</button>
+    <button id="reset" class="white-btn">重置</button>
+    <script>
+        let cnt = 0
+        document.getElementById('increase').addEventListener(
+            'click',
+            () => {
+                cnt++
+                document.getElementById('count').innerHTML = cnt
+            }
+        )
+        document.getElementById('reset').addEventListener(
+            'click',
+            () => {
+                cnt = 0
+                document.getElementById('count').innerHTML = cnt
+            }
+        )
+    </script>
+</body>
+</html>
