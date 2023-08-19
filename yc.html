@@ -14,7 +14,7 @@
   <body>
     <span id="time"></span>
     <script>
-      const fd = new Date(2023, 7, 20, 7, 0)
+      const fd = new Date(2023, 7, 20, 7, 20)
       setInterval(() => {
         let dd = new Date(fd.getTime() - new Date().getTime())
         let isTimeOut = dd < 0
@@ -27,7 +27,7 @@
         if (isTimeOut) {
           document.getElementById("time").innerHTML = `已经过去 ${days} 天 ${hours} 时 ${minutes} 分 ${seconds} 秒 ${milliseconds} 毫秒`
         } else {
-          document.getElementById("time").innerHTML = `还有 ${days} 天 ${hours} 时 ${minutes} 分 ${seconds} 秒 ${milliseconds} 毫秒`
+          document.getElementById("time").innerHTML = `还有 ${hours} 时 ${minutes} 分 ${seconds} 秒 ${milliseconds} 毫秒`
         }
       }, 1)
     </script>
