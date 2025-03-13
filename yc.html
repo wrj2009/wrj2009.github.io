@@ -14,7 +14,7 @@
   <body>
     <span id="time"></span>
     <script>
-      const fd = new Date(2025, 1, 7, 7, 20)
+      const fd = new Date(2025, 5, 21, 9, 0)
       setInterval(() => {
         let dd = new Date(fd.getTime() - new Date().getTime())
         let isTimeOut = dd < 0
@@ -23,7 +23,7 @@
         const hours = Math.floor(dd / (1000 * 60 * 60) % 24)
         const minutes = Math.floor(dd / (1000 * 60) % 60)
         const seconds = Math.floor(dd / 1000 % 60)
-        const milliseconds = Math.floor(dd % 1000)
+        const milliseconds = dd % 1000
         if (isTimeOut) {
           document.getElementById("time").innerHTML = `已经过去 ${days} 天 ${hours} 时 ${minutes} 分 ${seconds} 秒 ${milliseconds} 毫秒`
         } else {
