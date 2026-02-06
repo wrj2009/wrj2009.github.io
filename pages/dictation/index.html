@@ -50,15 +50,16 @@
               label="开始序号"
               v-model="startIndex"
               hide-details="true"
-              autofocus="true"
+              :autofocus="true"
               v-if="!started && !finished"
+              type="number"
             ></v-text-field>
             <v-text-field
               label="结束序号"
               v-model="endIndex"
               hide-details="true"
-              autofocus="true"
               v-if="!started && !finished"
+              type="number"
             ></v-text-field>
             <v-btn @click="start" color="blue">{{ finished ? '重新开始（刷新页面）' : '开始' }}</v-btn>
             <div><span v-for="word in history" :style="'color: ' + (word[1] ? '#4CAF50;' : '#F44336;')">{{ word[0] }} &nbsp;</span></div>
@@ -103,10 +104,15 @@
         }
       },
       methods: {
+        randomNumber (min, max) {
+          return Math.floor(Math.random() * (max - min + 1)) + min
+        },
         randomWords () {
           const wordList = []
-          while (wordList.length < this.endIndex - this.startIndex + 1) {
-            const randomIndex = Math.floor(Math.random() * (this.endIndex - this.startIndex + 1)) + this.startIndex - 1
+          const start = parseInt(this.startIndex)
+          const end = parseInt(this.endIndex)
+          while (wordList.length < end - start + 1) {
+            const randomIndex = this.randomNumber(start, end) - 1
             if (!wordList.includes(this.words[randomIndex])) {
               wordList.push(this.words[randomIndex])
             }
@@ -115,7 +121,6 @@
         },
         start () {
           if (this.finished) window.location.reload()
-          if (this.endIndex < this.startIndex || this.startIndex <= 0 || this.endIndex > this.words.length) return
           this.started = true
           this.randomWords()
           this.current = 0
